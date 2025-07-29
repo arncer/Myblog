@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="v1.1.12">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/github.com/json-iterator/go/@v/v1.1.12.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

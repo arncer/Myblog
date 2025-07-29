@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="@v20">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/github.com/cloudwego/base64x/@v/v0.1.5.zip!/" />
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/github.com/cloudwego/base64x/@v/v0.1.4.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

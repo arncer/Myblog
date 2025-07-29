@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="@v12">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/github.com/goccy/go-json/@v/v0.10.2.zip!/" />
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/github.com/goccy/go-json/@v/v0.10.5.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="@v18">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/google.golang.org/protobuf/@v/v1.36.6.zip!/" />
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/google.golang.org/protobuf/@v/v1.36.1.zip!/" />
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/google.golang.org/protobuf/@v/v1.34.1.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

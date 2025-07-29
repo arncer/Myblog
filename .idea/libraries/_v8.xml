@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="@v8">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/github.com/klauspost/cpuid/v2/@v/v2.3.0.zip!/" />
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/github.com/klauspost/cpuid/v2/@v/v2.2.4.zip!/" />
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/github.com/klauspost/cpuid/v2/@v/v2.2.7.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

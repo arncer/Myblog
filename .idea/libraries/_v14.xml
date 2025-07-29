@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="@v14">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/github.com/gabriel-vasile/mimetype/@v/v1.4.9.zip!/" />
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/github.com/gabriel-vasile/mimetype/@v/v1.4.2.zip!/" />
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/github.com/gabriel-vasile/mimetype/@v/v1.4.3.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

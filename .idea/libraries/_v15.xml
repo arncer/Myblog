@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="@v15">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/github.com/go-playground/validator/v10/@v/v10.27.0.zip!/" />
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/github.com/go-playground/validator/v10/@v/v10.20.0.zip!/" />
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/github.com/go-playground/validator/v10/@v/v10.14.0.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

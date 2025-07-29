@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="zoneinfo">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.5.windows-amd64/lib/time/zoneinfo.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

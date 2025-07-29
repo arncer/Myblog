@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pkg/mod/github.com/gabriel-vasile/mimetype@v1.4.9/testdata/jar.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

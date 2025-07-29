@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="v1.0.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pkg/mod/golang.org/toolchain@v0.0.1-go1.24.5.windows-amd64/lib/fips140/v1.0.0.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

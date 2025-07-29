@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="testdata">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pkg/mod/github.com/spf13/afero@v1.12.0/zipfs/testdata/t.zip!/" />
+      <root url="jar://$PROJECT_DIR$/pkg/mod/github.com/spf13/afero@v1.12.0/zipfs/testdata/small.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

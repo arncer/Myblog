@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="@v24">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/github.com/gin-gonic/gin/@v/v1.10.1.zip!/" />
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/github.com/gin-gonic/gin/@v/v1.9.1.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

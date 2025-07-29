@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="cpuid_data">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pkg/mod/github.com/klauspost/cpuid@v1.3.1/testdata/cpuid_data.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

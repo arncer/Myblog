@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="@v2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/github.com/pelletier/go-toml/v2/@v/v2.2.2.zip!/" />
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/github.com/pelletier/go-toml/v2/@v/v2.2.3.zip!/" />
+      <root url="jar://$PROJECT_DIR$/pkg/mod/cache/download/github.com/pelletier/go-toml/v2/@v/v2.2.4.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
