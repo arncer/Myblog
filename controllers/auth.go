@@ -23,7 +23,7 @@ func Register(ctx *gin.Context) {
 
 		return
 	}
-
+	//加密密码
 	hashPwd, err := utils.HashPassword(user.Password)
 	if err != nil {
 		//statusInternalServerError 表示服务器内部错误，通常用于处理服务器无法完成请求的情况。
@@ -32,14 +32,8 @@ func Register(ctx *gin.Context) {
 		})
 		return
 	}
+	//将加密后的密码存入数据库中
 	user.Password = hashPwd
-
-	token, err := utils.GenerateJWT(user.UserName)
-	if err != nil {
-		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
-	}
-	//如果没有问题
-	ctx.JSON(http.StatusOK, gin.H{"Token": token})
 
 	//AutoMigrate 的作用是根据传入的模型（如 User）自动创建或更新数据库表结构
 	if err := global.Db.AutoMigrate(&user); err != nil {
@@ -56,17 +50,45 @@ func Register(ctx *gin.Context) {
 		})
 		return
 	}
+	//生成token
+	token, err := utils.GenerateJWT(user.UserName)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+	}
+	//如果没有问题
+	ctx.JSON(http.StatusOK, gin.H{"Token": token})
 }
 
-//登录
-
-func login(ctx *gin.Context) {
+// 登录
+func Login(ctx *gin.Context) {
 	var input struct {
 		Username string `json:"username"`
 		Password string `json:"password"`
 	}
-	if err := ctx.ShouldBindJSON(&input); err != nil {
+	//反序列化
+	if err := ctx.ShouldBindJSON(&input); err != nil { //JSON 数据解析并绑定到 Go 语言结构体
 		ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
+	var user models.User
+	//查询用户是否在数据库
+	if err := global.Db.Where("username=?", input.Username).First(&user).Error; err != nil {
+		//HTTP 401 状态码表示 "Unauthorized"，即未经授权。它通常用于指示客户端请求需要身份验证，但未提供有效的凭据，或者提供的凭据无效。
+		ctx.JSON(http.StatusUnauthorized, gin.H{"error": "User not found"})
+		return
+	}
+
+	//判断密码是否正确
+	if !utils.CheckPassword(input.Password, user.Password) {
+		ctx.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid password"})
+		return
+	}
+	token, err := utils.GenerateJWT(user.UserName)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "wrong credential"})
+		return
+	}
+	ctx.JSON(http.StatusOK, gin.H{
+		"token": token,
+	})
 }
