@@ -24,7 +24,7 @@ func CreateExchangeRate(ctx *gin.Context) {
 		})
 		return
 	}
-	if err := global.Db.Create(&exchangeRate).Error; err != bil {
+	if err := global.Db.Create(&exchangeRate).Error; err != nil {
 		ctx.JSON(http.StatusInternalServerError, gin.H{
 			"error": err.Error(),
 		})
