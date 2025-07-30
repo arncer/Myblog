@@ -25,3 +25,9 @@ func GenerateJWT(username string) (string, error) {
 	signedToken, err := token.SignedString([]byte("scretkey")) //scretkey是签名密钥
 	return "Bearer" + signedToken, err
 }
+
+// 验证密码
+func CheckPassword(password string, hash string) bool {
+	err := bcrypt.CompareHashAndPassword([]byte(hash), []byte(password))
+	return err == nil //如果密码正确则无报错
+}
