@@ -2,6 +2,7 @@ package utils
 
 // 用于放一些工具的函数
 import (
+	"errors"
 	"github.com/golang-jwt/jwt/v5"
 	"golang.org/x/crypto/bcrypt"
 	"time"
@@ -30,4 +31,37 @@ func GenerateJWT(username string) (string, error) {
 func CheckPassword(password string, hash string) bool {
 	err := bcrypt.CompareHashAndPassword([]byte(hash), []byte(password))
 	return err == nil //如果密码正确则无报错
+}
+
+// ParseJWT 解析JWT令牌并返回用户名
+func ParseJWT(tokenString string) (string, error) {
+	//去掉Bearer前缀
+	if len(tokenString) > 7 && tokenString[0:7] == "Bearer" {
+		tokenString = tokenString[7:]
+	}
+
+	//回调函数的作用：JWT 解析时需要验证签名（确保令牌没被篡改），
+	//而验证签名需要知道当初签发令牌时用的密钥。这个回调函数就是返回这个密钥。
+	token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
+		//  检查签名算法是否符合预期
+		//类型断言,判断是否是HMAC方法,如果正确则ok为true,否则为false
+		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+			return nil, errors.New("unexpected signing method: " + token.Header["alg"].(string))
+		}
+		// 返回签名密钥（用于验证令牌是否被篡改）
+		return []byte("scretkey"), nil
+	})
+
+	if err != nil {
+		return "", err
+	}
+
+	if claims, ok := token.Claims.(jwt.Claims); ok && token.Valid {
+		username, ok := claims["username"].(string)
+		if !ok {
+			return "", errors.New("username is not a string")
+		}
+		return username, nil
+	}
+	return "", nil
 }
