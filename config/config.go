@@ -35,5 +35,8 @@ func InitConfig() {
 	if err := viper.Unmarshal(AppConfig); err != nil {
 		log.Fatalf("unable to decode into struct")
 	}
+	
+	//启动并连接数据库
 	initDB()
+	initRedis()
 }

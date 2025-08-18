@@ -27,7 +27,23 @@ func SetUpRouter() *gin.Engine {
 	//使用中间件
 	api.Use(middlewares.AuthMidlleware())
 	{
+		//创建对应汇率
 		api.POST("/exchangeRates", controllers.CreateExchangeRate)
+
+		//获取文章
+		api.GET("/articles", controllers.GetArticle)
+
+		//通过文章id获取文章
+		api.GET("/articles/:id", controllers.GetArticleByID)
+
+		//获取点赞数目
+		api.GET("articles/:id/likes", controllers.GetArticleLikes)
+
+		//给文章点赞
+		api.POST("articles/:id/likes", controllers.LikeArticle)
+
+		//取消文章点赞
+		api.POST("articles/:id/unlikes", controllers.UnLikeArticle)
 	}
 
 	return r
