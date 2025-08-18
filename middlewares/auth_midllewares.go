@@ -6,6 +6,7 @@ import (
 	"net/http"
 )
 
+// AuthMidlleware 验证用户的身份认证
 func AuthMidlleware() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		//Authorization 是 HTTP 协议中定义的标准头字段，专门用于传递认证信息。使用标准字段可以确保代码的可读性和兼容性。
@@ -21,6 +22,7 @@ func AuthMidlleware() gin.HandlerFunc {
 			ctx.Abort()
 			return
 		}
+		//解析JWT令牌并获取用户名
 		username, err := utils.ParseJWT(token)
 		if err != nil {
 			ctx.JSON(http.StatusUnauthorized, gin.H{
@@ -29,6 +31,6 @@ func AuthMidlleware() gin.HandlerFunc {
 			ctx.Abort()
 			return
 		}
-		ctx.Set("username", username)
+		ctx.Set("username", username) //可以跨中间件去取值
 	}
 }

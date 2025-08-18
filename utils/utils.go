@@ -27,7 +27,7 @@ func GenerateJWT(username string) (string, error) {
 	return "Bearer" + signedToken, err
 }
 
-// 验证密码
+// CheckPassword 验证密码
 func CheckPassword(password string, hash string) bool {
 	err := bcrypt.CompareHashAndPassword([]byte(hash), []byte(password))
 	return err == nil //如果密码正确则无报错
@@ -55,8 +55,10 @@ func ParseJWT(tokenString string) (string, error) {
 	if err != nil {
 		return "", err
 	}
+	//确保类型是jwt.Claims类型
+	//确保token的合法性
 
-	if claims, ok := token.Claims.(jwt.Claims); ok && token.Valid {
+	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
 		username, ok := claims["username"].(string)
 		if !ok {
 			return "", errors.New("username is not a string")

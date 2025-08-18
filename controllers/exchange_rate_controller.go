@@ -8,6 +8,7 @@ import (
 	"time"
 )
 
+// CreateExchangeRate
 func CreateExchangeRate(ctx *gin.Context) {
 	var exchangeRate models.ExchangeRate
 	if err := ctx.ShouldBindJSON(&exchangeRate); err != nil {

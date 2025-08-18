@@ -23,6 +23,7 @@ func Register(ctx *gin.Context) {
 
 		return
 	}
+
 	//加密密码
 	hashPwd, err := utils.HashPassword(user.Password)
 	if err != nil {
@@ -72,7 +73,7 @@ func Login(ctx *gin.Context) {
 	}
 	var user models.User
 	//查询用户是否在数据库
-	if err := global.Db.Where("username=?", input.Username).First(&user).Error; err != nil {
+	if err := global.Db.Where("user_name=?", input.Username).First(&user).Error; err != nil {
 		//HTTP 401 状态码表示 "Unauthorized"，即未经授权。它通常用于指示客户端请求需要身份验证，但未提供有效的凭据，或者提供的凭据无效。
 		ctx.JSON(http.StatusUnauthorized, gin.H{"error": "User not found"})
 		return
